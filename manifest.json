@@ -1,0 +1,10 @@
+{
+	"id": "google-calendar-static",
+	"name": "Google Calendar Static",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Insert Google Calendar events as static text into your notes. Perfect for daily notes and journaling.",
+	"author": "divydovy",
+	"authorUrl": "https://github.com/divydovy",
+	"isDesktopOnly": true
+}

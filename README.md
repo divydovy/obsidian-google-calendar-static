@@ -2,6 +2,8 @@
 
 Insert Google Calendar events as **static text** into your Obsidian notes. Perfect for daily notes and journaling.
 
+![Calendar Events Example](screenshots/calendar-events-example.png)
+
 ## Why This Plugin?
 
 Unlike other calendar plugins that create dynamic embeds, **Google Calendar Static** inserts events as editable markdown text. This means:
@@ -20,6 +22,8 @@ Unlike other calendar plugins that create dynamic embeds, **Google Calendar Stat
 - 🤖 **Auto-insert in Daily Notes** - Automatically add events when opening daily notes
 - ⚙️ **Customizable Formatting** - Control time format (12h/24h), include/exclude locations and descriptions
 - 🔐 **Secure OAuth** - Direct authentication with Google (no third-party services)
+
+![Command Palette](screenshots/command-palette.png)
 
 ## Installation
 
@@ -109,6 +113,8 @@ Unlike other calendar plugins that create dynamic embeds, **Google Calendar Stat
 1. Run command: "Insert this week's calendar events"
 2. All events for Monday-Sunday are inserted, grouped by day
 
+![Weekly Events Example](screenshots/weekly-events-example.png)
+
 **Example output:**
 ```markdown
 ## This Week's Events
@@ -140,6 +146,8 @@ Unlike other calendar plugins that create dynamic embeds, **Google Calendar Stat
 4. Works with filenames like `2026-01-02.md` or `2026-01-02 - Title.md`
 
 ## Settings
+
+![Settings Interface](screenshots/settings-interface.png)
 
 ### Time Format
 - **12-hour** (2:30 PM) or **24-hour** (14:30)
@@ -229,10 +237,25 @@ google-calendar-static/
 └── package.json         # Dependencies
 ```
 
+## Security
+
+This plugin handles OAuth tokens and calendar data. Please review the [Security Policy](SECURITY.md) for important information about:
+- Token storage and security
+- Known limitations
+- Best practices
+- Reporting vulnerabilities
+
 ## Contributing
 
-Contributions welcome! Please:
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for important information:
 
+**⚠️ This is a use-at-your-risk project with no guarantees**
+- I make no guarantees about fixing issues or accepting PRs
+- Response times are not guaranteed
+- Submit issues on GitHub for bugs and feature requests
+- See CONTRIBUTING.md for guidelines
+
+Quick steps:
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)

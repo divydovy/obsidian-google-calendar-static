@@ -76,7 +76,7 @@ This plugin handles sensitive data (OAuth tokens and calendar information). Plea
 
 **For Security Vulnerabilities:**
 1. **Do NOT open a public GitHub issue**
-2. Email security concerns to: [Your Contact Email - Add This]
+2. Create a private security advisory on GitHub: https://github.com/divydovy/obsidian-google-calendar-static/security/advisories
 3. Include: Description, steps to reproduce, potential impact
 
 **For Token Compromise:**
@@ -93,15 +93,15 @@ This is a community plugin provided as-is. While I make reasonable efforts to ma
 - ⚠️ **Response time for security issues is not guaranteed**
 
 If you discover a security vulnerability:
-1. Email details to [Add Contact Email]
+1. Create a private security advisory on GitHub: https://github.com/divydovy/obsidian-google-calendar-static/security/advisories
 2. Allow reasonable time for fixes before public disclosure
 3. Avoid exploiting the vulnerability beyond proof-of-concept
 
 ## Known Security Limitations
 
-### High Priority (Should Be Fixed)
-1. **Missing CSRF protection** in OAuth flow (state parameter)
-2. **XSS vulnerability** in OAuth error display
+### High Priority ✅ FIXED
+1. ~~**Missing CSRF protection** in OAuth flow~~ - Fixed in v1.0.0 (state parameter added)
+2. ~~**XSS vulnerability** in OAuth error display~~ - Fixed in v1.0.0 (HTML escaping added)
 
 ### Medium Priority (User Can Mitigate)
 1. Plain text token storage (Obsidian limitation - all plugins store data this way)

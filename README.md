@@ -142,8 +142,9 @@ Unlike other calendar plugins that create dynamic embeds, **Google Calendar Stat
 
 1. Go to Settings → Google Calendar Static
 2. Enable "Auto-insert in daily notes"
-3. Events are automatically added when you create/open daily notes
+3. Events are automatically added when you **create new** daily notes
 4. Works with filenames like `2026-01-02.md` or `2026-01-02 - Title.md`
+5. **Note:** Only triggers for newly created notes, not when opening existing ones
 
 ## Settings
 

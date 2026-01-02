@@ -174,7 +174,7 @@ export class GoogleCalendarSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName("Auto-insert in daily notes")
-			.setDesc("Automatically insert today's events when creating or opening daily notes")
+			.setDesc("Automatically insert today's events when creating new daily notes (does not trigger when opening existing notes)")
 			.addToggle((toggle) =>
 				toggle
 					.setValue(this.plugin.settings.autoInsertDailyNotes)

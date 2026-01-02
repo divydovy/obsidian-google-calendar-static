@@ -4,6 +4,7 @@ import {
 	MarkdownView,
 	Notice,
 	Plugin,
+	TFile,
 } from "obsidian";
 
 import {
@@ -75,26 +76,25 @@ export default class GoogleCalendarStaticPlugin extends Plugin {
 
 		// Auto-insert for daily notes
 		if (this.settings.autoInsertDailyNotes) {
+			// Listen for newly created files
 			this.registerEvent(
-				this.app.workspace.on("file-open", async (file) => {
-					if (!file) return;
+				this.app.vault.on("create", async (file) => {
+					// Only process markdown files
+					if (!(file instanceof TFile) || file.extension !== "md") return;
 
 					// Check if this is a daily note
 					const isDailyNote = this.isDailyNote(file.path);
 					if (isDailyNote) {
-						// Wait a moment for the file to be ready
+						// Wait for the file to be opened in editor
 						setTimeout(async () => {
 							const view = this.app.workspace.getActiveViewOfType(MarkdownView);
-							if (view) {
-								const content = await this.app.vault.read(file);
-								// Only auto-insert if content doesn't already have calendar events
-								if (!content.includes("## Calendar Events")) {
-									const editor = view.editor;
-									// Position cursor at the end
-									const lastLine = editor.lastLine();
-									editor.setCursor(lastLine, 0);
-									await this.insertEventsForDate(editor, new Date());
-								}
+							// Verify this view is showing the newly created file
+							if (view && view.file?.path === file.path) {
+								const editor = view.editor;
+								// Position cursor at the end
+								const lastLine = editor.lastLine();
+								editor.setCursor(lastLine, 0);
+								await this.insertEventsForDate(editor, new Date());
 							}
 						}, 500);
 					}
